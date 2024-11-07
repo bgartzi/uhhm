@@ -1,0 +1,53 @@
+# "Features"
+- DEL:
+    - Add filtering support (del by grep/nickname/address...)
+    - Add confirmation support (ask before continuing)
+- Other subcmd additions:
+    - Edit
+    - Rename (edit but just for nicknames)
+    - readd (for cases in which a remote host has changed but still has the same address. public key must be updated etc.)
+        - Remove host entry from known hosts
+        - Get new fingerprint and update known hosts
+        - Transfer public key to host again
+    - act (run one command on a host or a bunch of hosts (by filtering/grepping/etc.)
+        - also it should support confirmation
+- Make sure that ssh is installed in the system (although ssh-copy-id also does require so and we don't check for it's installation).
+    - Do it while it's being installed/built? in the Makefile?
+- Port forwarding
+    - uhhm fwd
+- Reverse port forwarding
+    - uhhm bwd? uhhm fwd something else?
+- General automatic, indifferent, int or string (id or nickname) lookup.
+    - It doesn't matter if the user provides an int or a string.
+
+
+# DONE:
+- Add a method to Host to obtain its fingerprint.
+- Add a method to Host so it can be added into the known_hosts file.
+- Add a method to Host so it can be removed from the known_hosts file.
+- known_hosts.go into local/known_hosts.go
+- ssh.go into local/ssh.go
+- Add a little functionality to be able to create a new UHHM key pair if needed and its able to locate the alread existing pair if needed.
+- Authorization based on ssh keys by default
+- Authorization based on keyboard password input (retries) if the previous fails
+- Add a method to ~Host~local so the UHHM public key can be copied into it easy and safely to the remote host.
+- Write the AddHost program
+- Write the DelHost program
+- Add a method to Host so it can create an ssh session that feeds the stdin into and feeds its stdout out from it.
+- Write the sesh program
+- Fix terminal/ssh session stdin/out redirection behavior problems:
+    - the x/crypto/ssh package doesn't seem to be able to handle that properly.
+    - github.com/creack/pty seems to be a way of handling pseudoterminals in unix.
+    - Another way could be just using os.Exec + an ssh command and redirecting stdin/out?
+- Make HOST_INVENTORY only readable by the user.(0600)
+- Implement Makefile (although really simple)
+- Use [GoPretty](https://github.com/jedib0t/go-pretty/tree/main/table) to be able to print tables
+    - Define an "InventoryRenderer".
+    - This should accept being configured by means of "SetOnly", "Exclude", "FilterHosts" or things like that. Just dropping ideas.
+    - Each host instance should have an instance to return the information that the renderer needs.
+    - Finally the renderer would be called by .Render(), which would finally create and print the table on the stdout.
+- Write the showhosts/lhosts/ls program
+- Add label support for hosts
+    - hosts have a slice/array of labels.
+    - Labels can be used to group hosts together.
+    - Kubernetes alike I'd say.
