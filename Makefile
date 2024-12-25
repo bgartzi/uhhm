@@ -17,7 +17,7 @@ endif
 .PHONY: build
 build:
 	mkdir -p $(BUILDDIR)
-	go build -o $(BUILDDIR)/$(APPNAME) $(MAINFILE)
+	go build -o $(BUILDDIR)/$(APPNAME)
 
 .PHONY: tidy
 tidy:

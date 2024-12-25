@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/bgartzi/uhhmm/cmd/subcmds"
+	"github.com/bgartzi/uhhm/lib/subcmds"
 	"github.com/urfave/cli/v2"
 	"os"
 )

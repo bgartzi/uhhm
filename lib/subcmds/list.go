@@ -2,8 +2,8 @@ package subcmds
 
 import (
 	"fmt"
-	"github.com/bgartzi/uhhmm/lib/display"
-	"github.com/bgartzi/uhhmm/lib/inventory"
+	"github.com/bgartzi/uhhm/lib/display"
+	"github.com/bgartzi/uhhm/lib/inventory"
 	"github.com/urfave/cli/v2"
 )
 
