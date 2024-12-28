@@ -2,9 +2,9 @@ package subcmds
 
 import (
 	"fmt"
-	"github.com/bgartzi/uhhmm/lib/host"
-	"github.com/bgartzi/uhhmm/lib/inventory"
-	"github.com/bgartzi/uhhmm/lib/local"
+	"github.com/bgartzi/uhhmm/host"
+	"github.com/bgartzi/uhhmm/inventory"
+	"github.com/bgartzi/uhhmm/local"
 	"github.com/urfave/cli/v2"
 	"sort"
 	"strconv"

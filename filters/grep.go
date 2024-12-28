@@ -1,8 +1,8 @@
 package filters
 
 import (
-	"github.com/bgartzi/uhhmm/lib/host"
-	"github.com/bgartzi/uhhmm/lib/inventory"
+	"github.com/bgartzi/uhhmm/host"
+	"github.com/bgartzi/uhhmm/inventory"
 	"strings"
 )
 

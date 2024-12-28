@@ -4,7 +4,7 @@ import (
 	"encoding/gob"
 	"errors"
 	"fmt"
-	"github.com/bgartzi/uhhmm/lib/host"
+	"github.com/bgartzi/uhhmm/host"
 	"io/fs"
 	"os"
 )
