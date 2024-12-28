@@ -3,7 +3,7 @@ ifndef VERBOSE
 endif
 
 APPNAME := uhhm
-MAINFILE := ./cmd/main.go
+TARGETPATH := ./cmd/uhhm
 BUILDDIR := $(CURDIR)/bin
 
 ifeq ($(PREFIX),)
@@ -17,7 +17,7 @@ endif
 .PHONY: build
 build:
 	mkdir -p $(BUILDDIR)
-	go build -o $(BUILDDIR)/$(APPNAME) $(MAINFILE)
+	go build -o $(BUILDDIR)/$(APPNAME) $(TARGETPATH)
 
 .PHONY: tidy
 tidy:

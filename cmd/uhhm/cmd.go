@@ -1,7 +1,6 @@
 package main
 
 import (
-	"github.com/bgartzi/uhhmm/cmd/subcmds"
 	"github.com/urfave/cli/v2"
 	"os"
 )
@@ -17,11 +16,11 @@ func Authors() []*cli.Author {
 
 func getSubCommands() []*cli.Command {
 	return []*cli.Command{
-		subcmds.Add(),
-		subcmds.Delete(),
-		subcmds.Sesh(),
-		subcmds.Proxy(),
-		subcmds.List(),
+		Add(),
+		Delete(),
+		Sesh(),
+		Proxy(),
+		List(),
 	}
 }
 
