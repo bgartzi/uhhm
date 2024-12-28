@@ -1,4 +1,4 @@
-package uhhm
+package config
 
 import (
 	"errors"

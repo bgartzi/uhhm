@@ -1,12 +1,12 @@
 package inventory
 
 import (
-	"github.com/bgartzi/uhhmm/uhhm"
+	"github.com/bgartzi/uhhmm/config"
 	"path"
 )
 
 func InventoryFilePath() (string, error) {
-	uhhmDir, err := uhhm.HomeDir()
+	uhhmDir, err := config.HomeDir()
 	if err != nil {
 		return "", err
 	}

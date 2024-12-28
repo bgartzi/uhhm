@@ -6,8 +6,8 @@ import (
 	"crypto/x509"
 	"encoding/pem"
 	"fmt"
+	"github.com/bgartzi/uhhmm/config"
 	"github.com/bgartzi/uhhmm/host"
-	"github.com/bgartzi/uhhmm/uhhm"
 	"github.com/bgartzi/uhhmm/utils"
 	"golang.org/x/crypto/ssh"
 	"io/ioutil"
@@ -17,7 +17,7 @@ import (
 )
 
 func UHHMPrivateSSHKeyPath() (string, error) {
-	uhhmHomeDir, err := uhhm.HomeDir()
+	uhhmHomeDir, err := config.HomeDir()
 	if err != nil {
 		return "", err
 	}
