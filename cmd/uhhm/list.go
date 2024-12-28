@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/bgartzi/uhhmm/display"
-	"github.com/bgartzi/uhhmm/inventory"
+	"github.com/bgartzi/uhhm/display"
+	"github.com/bgartzi/uhhm/inventory"
 	"github.com/urfave/cli/v2"
 )
 

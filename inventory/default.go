@@ -1,7 +1,7 @@
 package inventory
 
 import (
-	"github.com/bgartzi/uhhmm/config"
+	"github.com/bgartzi/uhhm/config"
 	"path"
 )
 

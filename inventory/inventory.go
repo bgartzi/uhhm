@@ -1,7 +1,7 @@
 package inventory
 
 import (
-	"github.com/bgartzi/uhhmm/host"
+	"github.com/bgartzi/uhhm/host"
 )
 
 type InventoryBackend interface {
