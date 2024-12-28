@@ -1,7 +1,7 @@
 package inventory
 
 import (
-	"github.com/bgartzi/uhhm/lib/uhhm"
+	"github.com/bgartzi/uhhmm/lib/uhhm"
 	"path"
 )
 

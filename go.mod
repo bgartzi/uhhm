@@ -1,4 +1,4 @@
-module github.com/bgartzi/uhhm
+module github.com/bgartzi/uhhmm
 
 go 1.18
 
