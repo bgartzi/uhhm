@@ -3,8 +3,8 @@ package display
 import (
 	"errors"
 	"fmt"
-	"github.com/bgartzi/uhhm/lib/filters"
-	"github.com/bgartzi/uhhm/lib/host"
+	"github.com/bgartzi/uhhm/filters"
+	"github.com/bgartzi/uhhm/host"
 	"github.com/jedib0t/go-pretty/v6/table"
 	"os"
 	"strconv"

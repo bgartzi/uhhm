@@ -1,7 +1,7 @@
 package filters
 
 import (
-	"github.com/bgartzi/uhhm/lib/host"
+	"github.com/bgartzi/uhhm/host"
 )
 
 type HostFilter func(inventory []host.Host) []host.Host

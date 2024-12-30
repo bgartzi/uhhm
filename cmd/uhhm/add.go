@@ -1,10 +1,10 @@
-package subcmds
+package main
 
 import (
 	"fmt"
-	"github.com/bgartzi/uhhm/lib/host"
-	"github.com/bgartzi/uhhm/lib/inventory"
-	"github.com/bgartzi/uhhm/lib/local"
+	"github.com/bgartzi/uhhm/host"
+	"github.com/bgartzi/uhhm/inventory"
+	"github.com/bgartzi/uhhm/local"
 	"github.com/urfave/cli/v2"
 	"sort"
 	"strconv"
