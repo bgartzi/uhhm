@@ -15,7 +15,7 @@ func listHosts() error {
 	}
 	hostInventory := inventory.InitSimpleInventory(invFP)
 	hosts := hostInventory.ListHosts()
-	displayer := display.DefaultHostDisplayerConfig()
+	displayer := display.NewHostDisplayerConfig()
 	err = displayer.Display(hosts)
 	return err
 }

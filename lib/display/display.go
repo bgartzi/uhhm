@@ -21,7 +21,7 @@ type HostDisplayer struct {
 // extra field name somehow so it's "not hardcoded" everywhere
 const HostPositionColName string = "Index"
 
-func DefaultHostDisplayerConfig() HostDisplayer {
+func NewHostDisplayerConfig() HostDisplayer {
 	return HostDisplayer{
 		columns: []string{HostPositionColName, "Address", "NickName", "Info", "Labels"},
 		table:   table.NewWriter(),
