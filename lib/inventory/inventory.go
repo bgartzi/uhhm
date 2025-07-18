@@ -14,4 +14,5 @@ type InventoryBackend interface {
 	GetHost(id int) (host.Host, error)
 	SearchHost(nickname string) (host.Host, error)
 	ListHosts() []host.Host
+	HostIDFromNickName(nickName *string) (int, error)
 }

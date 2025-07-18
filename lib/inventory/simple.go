@@ -109,19 +109,28 @@ func (inventory *simple_inventory) DelHost(id int) (host.Host, error) {
 }
 
 func (inventory *simple_inventory) SearchHost(nickname string) (host.Host, error) {
-	for _, h := range inventory.Hosts {
-		if h.NickName == nickname {
-			return h, nil
-		}
+	id, err := inventory.HostIDFromNickname(&nickname)
+	if err != nil {
+		return host.Host{}, err
 	}
-	err_msg := fmt.Sprintf(
-		"Nickname '%s' is not registered in the inventory.\n",
-		nickname)
-	return host.Host{}, errors.New(err_msg)
+
+	return inventory.GetHost(id)
 }
 
 func (inventory *simple_inventory) ListHosts() []host.Host {
 	return inventory.Hosts
+}
+
+func (inventory *simple_inventory) HostIDFromNickname(nickName *string) (int, error) {
+	id := inventory.find(host.Host{NickName: *nickName})
+	if id == -1 {
+		err_msg := fmt.Sprintf(
+			"Nickname '%s' is not registered in the inventory.\n",
+			*nickName)
+		return -1, errors.New(err_msg)
+	}
+
+	return id, nil
 }
 
 func InitSimpleInventory(file_path string) *simple_inventory {
