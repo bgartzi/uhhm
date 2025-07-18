@@ -15,16 +15,18 @@ type HostDisplayer struct {
 	filters filters.FilterChain
 	columns []string
 	table   table.Writer
+	header  bool
 }
 
 // FKA ID: Hosts don't have ID written on theirselves. Need a way of adding that
 // extra field name somehow so it's "not hardcoded" everywhere
 const HostPositionColName string = "Index"
 
-func NewHostDisplayerConfig() HostDisplayer {
+func NewHostDisplayerConfig(header bool) HostDisplayer {
 	return HostDisplayer{
 		columns: []string{HostPositionColName, "Address", "NickName", "Info", "Labels"},
 		table:   table.NewWriter(),
+		header:  header,
 	}
 }
 
@@ -130,7 +132,9 @@ func (displayer *HostDisplayer) Display(hosts []host.Host) error {
 	if err != nil {
 		return err
 	}
-	displayer.buildTableHeader()
+	if displayer.header {
+		displayer.buildTableHeader()
+	}
 	hosts = displayer.applyFilters(hosts)
 	err = displayer.buildTableData(hosts)
 	if err != nil {
